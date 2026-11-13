@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interview Seekho - DSA, Concurrency, System Design, AI (Hinglish mein)</title>
+  <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Interview Seekho &lt;/&gt;</h1>
+      <p>Senior SWE interview ki taiyari, zero se. Java, DSA, Concurrency, LLD, HLD aur AI, sab Hinglish mein.
+         Har jagah code likho aur browser mein hi chalao, ya pehle khud design socho aur score pao.</p>
+      <div class="btn-row" style="justify-content:center;margin-top:18px">
+        <a class="btn primary" href="learn.html?m=java">Shuru karo (Java se) →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Modules</h2>
+      <div id="modules" class="grid"></div>
+    </section>
+
+    <section class="panel" style="margin-top:24px">
+      <h2>Kaise padhein?</h2>
+      <ol class="steps">
+        <li><b>Order follow karo:</b> Java → DSA → Concurrency → LLD → HLD → AI. Pehle wale modules aage kaam aate hain.</li>
+        <li><b>▶️ Run karo:</b> har example ko badal ke chalao. Galti karke seekhna sabse fast hai.</li>
+        <li><b>🏋️ Practice:</b> "Run" sample tests chalata hai, "Submit" hidden tests bhi. Hint ya solution lene pe score kam hota hai.</li>
+        <li><b>🤔 Pehle aap socho:</b> design questions mein pehle apna jawab likho. Site batayegi kaunse points cover kiye aur score degi. Uske baad model answer dikhega.</li>
+        <li><b>Progress</b> isi browser mein save hoti hai (koi login nahi).</li>
+      </ol>
+      <p class="muted small">Java code browser mein hi compile hota hai. Pehli baar Run dabane pe 5-15 second lagte hain, uske baad fast.</p>
+    </section>
+  </main>
+
+  <footer class="footer">Java runner: <a href="https://cheerpj.com/" target="_blank" rel="noopener">Built with CheerpJ</a></footer>
+
+  <script src="js/common.js?v=1"></script>
+  <script>
+    document.getElementById("modules").innerHTML = MODULES.map((m, i) => {
+      const done = moduleDoneCount(m.id);
+      return `<a class="card" href="learn.html?m=${m.id}">
+        <div class="icon">${m.icon}</div>
+        <h3>${i + 1}. ${esc(m.title)}</h3>
+        <p>${esc(m.desc)}</p>
+        <div class="muted small">${done ? `✅ ${done} lessons complete` : "Abhi shuru nahi kiya"}</div>
+      </a>`;
+    }).join("");
+  </script>
+</body>
+</html>
